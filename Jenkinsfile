@@ -19,7 +19,7 @@ sh 'docker push johnsoncls2019/springbootnew1'
 stage ('Run Container on AWS Server') {
 def dockerRun = 'docker run -p 7000:7000 -d -t --name AchistarTecnologies2 johnsoncls2019/springbootnew1'
 sshagent(['server_aws1']) {
-sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.88.254 ${dockerRun}"
+sh "ssh -o StrictHostKeyChecking=no ubuntu@3.83.30.155 ${dockerRun}"
 }
 }
 stage ('Run container on Dev server') {
