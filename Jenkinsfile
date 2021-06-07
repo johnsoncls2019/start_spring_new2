@@ -28,6 +28,7 @@ stage ('Run container on Dev server') {
 def dockerRemove = 'docker rm --force AchiStarTechnologies2'
 def dockerRun = 'docker run -p 7000:7000 -d  -t --name AchiStarTechnologies2 johnsoncls2019/springbootnew1'
 sshagent(['dev-server']) {
+sh "ssh -o StrictHostKeyChecking=no root@192.168.44.129 ${dockerRemove}"
 sh "ssh -o StrictHostKeyChecking=no root@192.168.44.129 ${dockerRun}"
 }
 }
