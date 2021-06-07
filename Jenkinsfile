@@ -20,8 +20,8 @@ stage ('Run Container on AWS Server') {
 def dockerRemove = 'docker rm --force AchiStarTechnologies2'
 def dockerRun = 'docker run -p 7000:7000 -d -t --name AchistarTecnologies2 johnsoncls2019/springbootnew1'
 withCredentials([aws(accessKeyVariable: 'AKIAZEX4M52X46CTAZUA', credentialsId: 'aws_server', secretKeyVariable: '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')]) {
-${dockerRemove}
-${dockerRun}
+'${dockerRemove}'
+'${dockerRun}'
 }
 }
 stage ('Run container on Dev server') {
